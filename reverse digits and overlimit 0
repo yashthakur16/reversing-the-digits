@@ -1,0 +1,28 @@
+#include <iostream>
+#include <climits>
+using namespace std;
+int main()
+{
+    int n,r,reverse=0;
+    bool b=0;
+    cin>>n;
+    while(n!=0)
+    {
+        r=n%10;
+        if((reverse>INT_MAX/10)||(reverse<INT_MIN/10))
+        {
+            b=1;
+            break;
+        }
+        reverse=(reverse*10)+r;
+        n=n/10;
+    }
+    if(b==1)
+    {
+        cout<<"0";
+    }
+    else
+    {
+    cout<<reverse;
+    }
+}
